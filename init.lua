@@ -1,0 +1,2 @@
+require("lesego")
+print("Hello")
