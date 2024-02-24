@@ -53,4 +53,8 @@ return require('packer').startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
+
+    use {
+        "Pocco81/auto-save.nvim"
+    }
 end)
