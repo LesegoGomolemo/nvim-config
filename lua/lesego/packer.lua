@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
         "neovim/nvim-lspconfig",
     }
 
-    use {
-        "Pocco81/auto-save.nvim"
-    }
+    use { "Pocco81/auto-save.nvim" }
+
+    use('lewis6991/gitsigns.nvim')
 end)
