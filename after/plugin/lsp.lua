@@ -4,7 +4,7 @@ lsp.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'tsserver', 'rust_analyzer', 'eslint', 'lua_ls',},
+    ensure_installed = {'tsserver', 'rust_analyzer', 'eslint', 'lua_ls', 'html', 'cssls'},
     handlers = {
      --   lsp_zero.default_setup,
     },
@@ -12,6 +12,10 @@ require('mason-lspconfig').setup({
 
 local lspconfig = require('lspconfig')
 lspconfig.tsserver.setup {}
+lspconfig.eslint.setup {}
+lspconfig.html.setup {}
+lspconfig.cssls.setup {}
+
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
