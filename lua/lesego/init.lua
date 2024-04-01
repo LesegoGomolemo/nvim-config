@@ -1,3 +1,6 @@
-require("lesego.remap")
-require("lesego.set")
+require("lesego.lazy_init")
 
+require("lesego.set")
+require("lesego.remap")
+--[[require("lesego.packer")
+--]]
