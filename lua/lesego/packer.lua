@@ -57,4 +57,11 @@ return require('packer').startup(function(use)
     use { "Pocco81/auto-save.nvim" }
 
     use('lewis6991/gitsigns.nvim')
+
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup({
+        direction = 'float',
+        open_mapping = [[vt]]
+      })
+    end}
 end)
