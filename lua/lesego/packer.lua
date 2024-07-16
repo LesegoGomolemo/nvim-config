@@ -7,7 +7,10 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
 
     use 'wbthomason/packer.nvim' 
+ 
+    use 'nvim-lua/plenary.nvim'
 
+    use 'mfussenegger/nvim-dap'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -53,6 +56,14 @@ return require('packer').startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
+
+    use {
+      'akinsho/flutter-tools.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+      },
+   }
 
     use { "Pocco81/auto-save.nvim" }
 
