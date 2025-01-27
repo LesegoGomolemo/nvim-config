@@ -12,6 +12,8 @@ require('mason-lspconfig').setup({
 
 local lspconfig = require('lspconfig')
 lspconfig.ts_ls.setup {}
+lspconfig.rust_analyzer.setup {}
+lspconfig.lua_ls.setup {}
 lspconfig.eslint.setup {}
 lspconfig.html.setup {}
 lspconfig.cssls.setup {}
