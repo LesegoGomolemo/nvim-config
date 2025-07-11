@@ -4,18 +4,31 @@ lsp.preset('recommended')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'tsserver', 'rust_analyzer', 'eslint', 'lua_ls', 'html', 'cssls'},
+    ensure_installed = {'ts_ls', 'rust_analyzer', 'eslint', 'lua_ls', 'html', 'cssls', 'pyright', 'pylsp', 'gopls', 'angularls', 'kotlin_language_server' },
     handlers = {
      --   lsp_zero.default_setup,
     },
 })
 
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {}
+lspconfig.ts_ls.setup {}
+lspconfig.lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+}
 lspconfig.eslint.setup {}
 lspconfig.html.setup {}
 lspconfig.cssls.setup {}
-
+lspconfig.pyright.setup {}
+lspconfig.pylsp.setup {}
+lspconfig.gopls.setup {}
+lspconfig.angularls.setup {}
+lspconfig.kotlin_language_server.setup {}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -44,7 +57,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-    --vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<leader>hh", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()
