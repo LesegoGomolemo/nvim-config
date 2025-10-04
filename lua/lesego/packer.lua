@@ -89,8 +89,8 @@ return require('packer').startup(function(use)
         open_mapping = [[vt]]
       })
     end}
-    
+
     use { "github/copilot.vim" }
-    
+
     -- use('nvim-tree/nvim-tree.lua') 
 end)
