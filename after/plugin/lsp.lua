@@ -13,7 +13,6 @@ require('mason-lspconfig').setup({
     'cssls',
     'pyright',
     'pylsp',
-    'gopls',
     'angularls',
     'kotlin_language_server',
   },
